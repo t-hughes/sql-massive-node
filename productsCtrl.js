@@ -1,13 +1,13 @@
-var app = require('./index');
-var db = app.get('db');
+var db = require('./db');
 
+console.log(db);
 module.exports = {
   create: function(req, res){
-    var name = req.query.name;
-    var description = req.query.description;
-    var price = req.query.price;
-    var imageurl = req.query.imageurl;
-    db.create_products([name, description, price, imageurl], function(err, products){
+    var name = req.body.name;
+    var description = req.body.description;
+    var price = req.body.price;
+    var imageurl = req.body.imageurl;
+    db.create_product([name, description, price, imageurl], function(err, products){
       res.status(200).send('Product was created!');
     });
   },
