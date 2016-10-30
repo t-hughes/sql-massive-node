@@ -10,11 +10,11 @@ app.use(cors());
 
 
 //Endpoints
-app.get('/api/product/:productId', productsCtrl.getOne);
-app.get('/api/products', productsCtrl.getAll);
-app.post('/api/product', productsCtrl.create);
-app.put('/api/product/:productId?description', productsCtrl.update);
-app.delete('/api/product/:productId', productsCtrl.delete);
+app.get('/product/:id', productsCtrl.getOne);
+app.get('/products', productsCtrl.getAll);
+app.post('/product', productsCtrl.create);
+app.put('/product/:id', productsCtrl.update);
+app.delete('/product/:id', productsCtrl.delete);
 
 
 //Port
